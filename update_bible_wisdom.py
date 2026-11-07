@@ -76,7 +76,7 @@ def apply_emphasis(text, is_orig=False):
     return text
 
 def process_wisdom():
-    base_path = "c:/Users/User/OneDrive - usk.ac.kr/문서/Github/Bible/구약"
+    base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "구약")
     
     for book in WISDOM_BOOKS:
         print(f">>> Processing {book['name']}...")
