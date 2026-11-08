@@ -43,7 +43,7 @@ BOOK_DATA = {
     "요한계시록": {"id": 66, "chapters": 22}
 }
 
-BASE_DIR = r"c:\Users\User\OneDrive - usk.ac.kr\문서\Github\Bible"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def get_bible_text(translation, book_id, chapter):
     url = f"https://bolls.life/get-chapter/{translation}/{book_id}/{chapter}/"

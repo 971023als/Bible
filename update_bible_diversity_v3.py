@@ -95,7 +95,7 @@ def process_chapter(book_name, book_id, chapter):
         
         # 경로 설정 및 저장
         sub_dir = "구약" if book_id <= 39 else "신약"
-        path = f"c:/Users/User/OneDrive - usk.ac.kr/문서/Github/Bible/{sub_dir}/{book_name}/{book_name}_{chapter}장.md"
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), sub_dir, book_name, f"{book_name}_{chapter}장.md")
         
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:

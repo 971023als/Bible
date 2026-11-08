@@ -74,7 +74,7 @@ BOOK_DATA = {
     "요한계시록": {"id": 66, "en": "revelation", "chapters": 22}
 }
 
-BASE_DIR = r"c:\Users\User\OneDrive - usk.ac.kr\문서\Github\Bible"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def fetch_json(url):
     try:

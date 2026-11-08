@@ -88,7 +88,7 @@ def process_chapter(book_name, book_id, chapter):
     lines.append("\n♾️ **변치 않는 하나님의 언약**: 이 장에서도 '사랑과 평화(Love and Peace)'의 물줄기는 멈추지 않습니다.")
 
     sub_dir = "구약" if book_id <= 39 else "신약"
-    path = f"c:/Users/User/OneDrive - usk.ac.kr/문서/Github/Bible/{sub_dir}/{book_name}/{book_name}_{chapter}장.md"
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), sub_dir, book_name, f"{book_name}_{chapter}장.md")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))

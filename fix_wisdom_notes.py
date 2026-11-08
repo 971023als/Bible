@@ -1,7 +1,7 @@
 
 import os
 
-base_path = "c:/Users/User/OneDrive - usk.ac.kr/문서/Github/Bible/구약"
+base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "구약")
 
 NOTES_DB = {
     "시편_23": """
@@ -50,7 +50,7 @@ def fix_notes():
     # 1. 시편 명칭 통일 (장 -> 편) 및 노트 주입
     psalm_dir = os.path.join(base_path, "시편")
     for filename in os.listdir(psalm_dir):
-        if filename.endswith("장.md"):
+        if filename.startswith("시편_") and filename.endswith("장.md"):
             old_path = os.path.join(psalm_dir, filename)
             new_path = os.path.join(psalm_dir, filename.replace("장.md", "편.md"))
             
